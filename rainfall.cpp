@@ -11,6 +11,7 @@
 
 int main() {
 
+    // input hourly rainfall data
     std::vector<float> rainfall;
     float t;
     float m;
@@ -23,6 +24,7 @@ int main() {
         return 1;
     }
 
+    // calculate average and heaviest rainfall
     t = rainfall[0];
     m = rainfall[0];
     for (std::vector<float>::size_type i = 1; i < rainfall.size(); ++i) {
@@ -31,6 +33,7 @@ int main() {
             m = rainfall[i];
     }
 
+    // output the rainfall report
     std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << (t / rainfall.size()) << " hundreds of inches" << '\n';
     std::cout << "Heaviest Hourly Rainfall: " << m << " hundreds of inches" << '\n';
 
