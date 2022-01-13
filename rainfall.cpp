@@ -10,6 +10,7 @@
 #include <vector>
 
 int main() {
+
     std::vector<float> rainfall;
     float t;
     float m;
@@ -21,6 +22,7 @@ int main() {
         std::cerr << "Error: no rainfall data\n";
         return 1;
     }
+
     t = rainfall[0];
     m = rainfall[0];
     for (std::vector<float>::size_type i = 1; i < rainfall.size(); ++i) {
@@ -28,6 +30,7 @@ int main() {
         if (rainfall[i] > m)
             m = rainfall[i];
     }
+
     std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << (t / rainfall.size()) << " hundreds of inches" << '\n';
     std::cout << "Heaviest Hourly Rainfall: " << m << " hundreds of inches" << '\n';
 
