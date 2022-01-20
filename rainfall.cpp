@@ -24,14 +24,14 @@ int main() {
 
     // calculate average rainfall
     double total = 0.0;
-    for (auto rain : rainfall) {
+    for (const auto rain : rainfall) {
         total += rain;
     }
-    double average = total / rainfall.size();
+    const double average = total / rainfall.size();
 
     // calculate heaviest rainfall
     auto max = rainfall[0];
-    for (auto rain : rainfall) {
+    for (const auto rain : rainfall) {
         if (rain > max)
             max = rain;
     }
