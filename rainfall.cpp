@@ -23,17 +23,17 @@ int main() {
     }
 
     // calculate average rainfall
-    auto total = rainfall[0];
-    for (std::vector<double>::size_type i = 1; i < rainfall.size(); ++i) {
-        total += rainfall[i];
+    double total = 0.0;
+    for (auto rain : rainfall) {
+        total += rain;
     }
     double average = total / rainfall.size();
 
     // calculate heaviest rainfall
     auto max = rainfall[0];
-    for (std::vector<double>::size_type i = 1; i < rainfall.size(); ++i) {
-        if (rainfall[i] > max)
-            max = rainfall[i];
+    for (auto rain : rainfall) {
+        if (rain > max)
+            max = rain;
     }
 
     // output the rainfall report
