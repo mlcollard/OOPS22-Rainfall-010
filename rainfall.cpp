@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <vector>
 #include <iterator>
+#include <algorithm>
 
 // average of the container
 double avg(const std::vector<double>& data) {
@@ -24,13 +25,7 @@ double avg(const std::vector<double>& data) {
 // maximum value in the container
 double maximum(const std::vector<double>& data) {
 
-    auto max = data[0];
-    for (const auto item : data) {
-        if (item > max)
-            max = item;
-    }
-
-    return max;
+    return *std::max_element(data.begin(), data.end());
 }
 
 int main() {
