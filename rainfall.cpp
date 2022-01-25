@@ -10,16 +10,12 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
+#include <numeric>
 
 // average of the container
 double avg(const std::vector<double>& data) {
 
-    double total = 0.0;
-    for (const auto item : data) {
-        total += item;
-    }
-
-    return total / data.size();
+    return std::accumulate(data.begin(), data.end(), 0.0) / data.size();
 }
 
 // maximum value in the container
