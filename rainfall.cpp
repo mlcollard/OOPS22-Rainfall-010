@@ -12,12 +12,6 @@
 #include <algorithm>
 #include <numeric>
 
-// average of the container
-double avg(const std::vector<double>& data) {
-
-    return std::accumulate(data.begin(), data.end(), 0.0) / data.size();
-}
-
 // maximum value in the container
 double maximum(const std::vector<double>& data) {
 
@@ -34,8 +28,11 @@ int main() {
         return 1;
     }
 
+    // calculate average rainfall
+    const auto average = std::accumulate(rainfall.begin(), rainfall.end(), 0.0) / rainfall.size();
+
     // output the rainfall report
-    std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << avg(rainfall) << " hundreds of inches" << '\n';
+    std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << average << " hundreds of inches" << '\n';
     std::cout << "Heaviest Hourly Rainfall: " << maximum(rainfall) << " hundreds of inches" << '\n';
 
     return 0;
