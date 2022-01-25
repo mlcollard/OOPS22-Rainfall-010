@@ -10,6 +10,17 @@
 #include <vector>
 #include <iterator>
 
+// average of the container
+double avg(const std::vector<double>& data) {
+
+    double total = 0.0;
+    for (const auto item : data) {
+        total += item;
+    }
+
+    return total / data.size();
+}
+
 int main() {
 
     // input hourly rainfall data
@@ -20,13 +31,6 @@ int main() {
         return 1;
     }
 
-    // calculate average rainfall
-    double total = 0.0;
-    for (const auto rain : rainfall) {
-        total += rain;
-    }
-    const double average = total / rainfall.size();
-
     // calculate heaviest rainfall
     auto max = rainfall[0];
     for (const auto rain : rainfall) {
@@ -35,7 +39,7 @@ int main() {
     }
 
     // output the rainfall report
-    std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << average << " hundreds of inches" << '\n';
+    std::cout << "Average Hourly Rainfall: " << std::fixed << std::setprecision(2) << avg(rainfall) << " hundreds of inches" << '\n';
     std::cout << "Heaviest Hourly Rainfall: " << max << " hundreds of inches" << '\n';
 
     return 0;
