@@ -12,4 +12,7 @@
 // average of the container
 double avg(const std::vector<double>& data);
 
+// maximum value in the container
+double maximum(const std::vector<double>& data);
+
 #endif
