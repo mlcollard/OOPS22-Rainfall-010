@@ -7,4 +7,9 @@
 #ifndef INCLUDED_AGGREGATE_HPP
 #define INCLUDED_AGGREGATE_HPP
 
+#include <vector>
+
+// average of the container
+double avg(const std::vector<double>& data);
+
 #endif

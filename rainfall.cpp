@@ -10,14 +10,7 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
-#include <numeric>
 #include "Aggregate.hpp"
-
-// average of the container
-double avg(const std::vector<double>& data) {
-
-    return std::accumulate(data.begin(), data.end(), 0.0) / data.size();
-}
 
 // maximum value in the container
 double maximum(const std::vector<double>& data) {
